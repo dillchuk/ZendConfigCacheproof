@@ -30,6 +30,7 @@ class ConfigFactoryTest extends \PHPUnit_Framework_TestCase {
         putenv(static::ENV_VAR . '=1');
         $config = $factory($container, null);
         $this->assertTrue((bool) $config['cacheproof_hello_world']);
+        $this->assertTrue((bool) $config['cacheproof_hello_world_2']);
         putenv(static::ENV_VAR . '=');
 
         $config = $factory($container, null);
