@@ -21,11 +21,22 @@ class ConfigFactoryTest extends \PHPUnit_Framework_TestCase {
 
         $factory = new ConfigFactory;
         $factory->setParentFactory($parentFactory);
-        $factory($container, null);
+
+        $config = $factory($container, null);
+        $this->assertEmpty($config);
+
+        putenv('ConfigFactoryTest_TEST=1');
+        $config = $factory($container, null);
+        $this->assertTrue((bool) $config['cacheproof_hello_world']);
+        putenv('ConfigFactoryTest_TEST=');
+
+        $config = $factory($container, null);
+        $this->assertEmpty($config);
     }
 
     public static function dataConfigFactory() {
-        $loader = new EnvLoader('test');
+        $loader = new EnvLoader('ConfigFactoryTest_TEST');
+        $loader->setGlob(__DIR__ . '/data/{{,*.}cacheproof}.php');
         return [
             [$loader],
             [[$loader]],
