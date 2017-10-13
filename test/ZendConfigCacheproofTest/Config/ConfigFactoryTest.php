@@ -16,7 +16,7 @@ class ConfigFactoryTest extends \PHPUnit_Framework_TestCase {
         $container = $this->getMock(ContainerInterface::class);
         $container->expects($this->any())->method('get')->willReturn($loaders);
 
-        $parentFactory = $this->getMock(ParentFactory::class);
+        $parentFactory = $this->getMock(ParentFactory::class, ['__invoke']);
         $parentFactory->expects($this->any())->method('__invoke')->willReturn([]);
 
         $factory = new ConfigFactory;
