@@ -11,4 +11,4 @@ return [
 
 ## Easy Start
 
-In `config/autoload`, create *.cacheproof.php config files.  (As opposed to the usual *.global.php and *.local.php files.)
+In `config/autoload`, create `*.cacheproof.php` config files.  (As opposed to the usual `*.global.php` and `*.local.php` files.)
