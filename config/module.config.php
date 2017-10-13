@@ -5,7 +5,8 @@ namespace ZendConfigCacheproof;
 return [
     'service_manager' => [
         'factories' => [
-            'config' => ConfigFactory::class,
+            'config' => Config\ConfigFactory::class,
+            'cacheproof_loaders' => Loader\DefaultFactory::class,
         ],
     ],
 ];

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Your custom factory shall return a list of Loader\LoaderInterface classes.
+ * Default behaviour is to always include config/autoload/*.cacheproof.php
+ */
+$loaderFactory = ZendConfigCacheproof\Loader\DefaultFactory::class;
+
+return [
+    'service_manager' => [
+        'factories' => [
+            'cacheproof_loaders' => $loaderFactory,
+        ],
+    ],
+];

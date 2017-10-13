@@ -9,8 +9,8 @@
          backupGlobals="false"
          syntaxCheck="true"
         >
-    <testsuite name="ZfcUserRedirectUri Test Suite">
-        <directory>./test/ZendConfigCacheproof</directory>
+    <testsuite name="ZendConfigCacheproof Test Suite">
+        <directory>./test/ZendConfigCacheproofTest</directory>
     </testsuite>
 
     <filter>
