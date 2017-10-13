@@ -16,7 +16,7 @@ class ConfigFactory implements FactoryInterface {
      */
     protected $parentFactory;
 
-    public function setParentFactory(FactoryInterface $parentFactory) {
+    public function setParentFactory($parentFactory) {
         $this->parentFactory = $parentFactory;
     }
 
