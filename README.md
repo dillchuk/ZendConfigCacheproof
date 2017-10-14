@@ -46,3 +46,16 @@ class LoaderFactory implements FactoryInterface {
 ~~~
 
 Then, your `./config/autoload/{{,*.}live}.php` config is live-loaded whenever environment variable `INSTANCE_LIVE` is true-ish.
+
+
+## Removing Conflicting Config
+
+You may want to remove config too.  This can be done as follows:
+
+```
+<?php // in ./config/autoload/cacheproof.php
+
+return [
+    'foobar' => new \Zend\Stdlib\ArrayUtils\MergeRemoveKey, // toast it
+]
+```
