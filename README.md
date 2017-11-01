@@ -6,7 +6,9 @@
 
 Caching your config is nice (i.e. using `'module_listener_options' => ['config_cache_enabled' => true]`), but this locks your config down tight.  What if you need to tweak things a bit for, say, running tests?  Enter ZendConfigCacheproof.
 
-Install in `modules.config.php`:
+Install with `composer require illchuk/zend-config-cacheproof`.
+
+Then reference in `modules.config.php`:
 ~~~
 return [
     ..., 'ZendConfigCacheproof', ...
